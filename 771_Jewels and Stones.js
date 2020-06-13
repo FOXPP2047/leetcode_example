@@ -21,3 +21,27 @@ var numJewelsInStones = function(J, S) {
     });
     return result;
 };
+
+/**
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */
+var numJewelsInStones = function(J, S) {
+    let jewels = new Set(J)
+    let spiltJ = J.split("");
+    
+    spiltJ.forEach(e => {
+        jewels.add(e);
+    });
+    
+    let splitS = S.split("");
+    let result = 0;
+    
+    splitS.forEach(e =>  {
+        if(jewels.has(e)) {
+            result++;
+        }
+    });
+    return result;
+};
