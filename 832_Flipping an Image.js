@@ -22,3 +22,24 @@ var flipAndInvertImage = function(A) {
     }
     return A;
 };
+
+/**
+ * @param {number[][]} A
+ * @return {number[][]}
+ */
+var flipAndInvertImage = function(A) {
+    const rowSize = A.length;
+    const colSize = A[0].length;
+    
+    for(let i = 0; i < rowSize; ++i) {
+        for(let j = 0; j < (colSize / 2); ++j) {
+            const flipIndex = rowSize - j - 1;
+            const left = A[i][j] === 0 ? 1 : 0;
+            const right = A[i][flipIndex] === 0 ? 1 : 0;
+            A[i][j] = right;
+            A[i][flipIndex] = left;
+        }
+    }
+
+    return A;
+};
