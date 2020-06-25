@@ -19,3 +19,19 @@ var sumZero = function(n) {
     }
     return result;
 };
+
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+var sumZero = function(n) {
+    const result = [];
+    let num = -n + 1;
+    
+    for(let i = 0; i < n; ++i) {
+        result.push(num);
+        num += 2;
+    }
+
+    return result;
+};
