@@ -28,6 +28,7 @@ var strStr = function(haystack, needle) {
     return -1;
 };
 
+//kmp algorithm
 let kmp = (needle) => {
     let nLength = needle.length;
     let lps = new Array(nLength).fill(0);
@@ -46,3 +47,4 @@ let kmp = (needle) => {
     }
     return lps;
 }
+
