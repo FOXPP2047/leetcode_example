@@ -16,6 +16,7 @@ var decode = function(shortUrl) {
     return urls[shortUrl.split("com/")[1]];
 };
 
+//unique date + string
 /**
  * Your functions will be called as such:
  * decode(encode(url));
