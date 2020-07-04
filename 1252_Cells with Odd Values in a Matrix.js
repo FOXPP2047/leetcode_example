@@ -49,3 +49,4 @@ var oddCells = function(n, m, indices) {
     console.log(numRow, numCol);
     return numRow * m + numCol * n - 2 * numRow * numCol;
 };
+//odd value in matrix
