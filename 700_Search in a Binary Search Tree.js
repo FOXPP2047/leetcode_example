@@ -21,3 +21,28 @@ var searchBST = function(root, val) {
     }
     return root;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var searchBST = function(root, val) {
+    let tree = root;
+    while(tree) {
+        if(tree.val > val)
+            tree = tree.left;
+        else if(tree.val < val)
+            tree = tree.right;
+        else break;
+    }
+    return tree;
+};
