@@ -21,9 +21,9 @@ var peakIndexInMountainArray = function(A) {
  */
 const peakIndexInMountainArray = (A, low = 0, high = A.length - 1) => {
     if (!A.length) 
-        return -1
+        return -1;
     
-    const mid = ((low + high) / 2) | 0
+    const mid = Math.floor((low + high) / 2);
 	
     if (A[mid] > A[mid - 1] && A[mid] > A[mid + 1])
         return mid;
