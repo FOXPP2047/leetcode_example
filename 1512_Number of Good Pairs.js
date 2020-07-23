@@ -14,3 +14,30 @@ var numIdenticalPairs = function(nums) {
     }
     return result;
 };
+
+var numIdenticalPairs = function(nums) {
+    let map = new Map();
+    let result = 0;
+    
+    for(let i = 0; i < nums.length; ++i) {
+        if(map.has(nums[i])) {
+            result += map.get(nums[i]);
+            map.set(nums[i], map.get(nums[i]) + 1);
+        } else map.set(nums[i], 1);
+    }
+    return result;
+};
+
+var numIdenticalPairs = function(nums) {
+	const map = {};
+	let result = 0;
+	nums.forEach(num => {
+	    if (map[num]) {
+	        result += map[num];
+	        map[num]++;
+	    } else {
+	        map[num] = 1;
+	    }
+	})
+	return result;
+};
