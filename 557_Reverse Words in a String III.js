@@ -29,12 +29,12 @@ var reverseWords = function(s) {
 var reverseWords = function(s) {
     let result = '';
     let word = '';
-    for (let c of s) {
-        if (c === ' ') {
-            result += word + c;
+    for (let i = 0; i < s.length; ++i) {
+        if (s[i] === ' ') {
+            result += word + s[i];
             word = '';
         } else {
-            word = c + word;
+            word = s[i] + word;
         }
     }
     return result + word;
