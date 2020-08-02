@@ -31,3 +31,17 @@ var runningSum = function(nums) {
 var runningSum = function(nums) {
     return nums.map(curr => sum += curr, sum = 0);
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function(nums) {
+    let result = [];
+    
+    for(let i = 0; i < nums.length; ++i) {
+        if(i === 0) result.push(nums[i]);
+        else result.push(result[i - 1] + nums[i]);
+    }
+    return result;
+};

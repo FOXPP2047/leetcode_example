@@ -28,3 +28,24 @@ var smallerNumbersThanCurrent = function(nums) {
     const map = new Map(sorted.map((num, index) => [num, size - index - 1]));
     return nums.map(num => map.get(num));
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+    const size = nums.length;
+    const sortedArr = Array.from(nums).sort((a, b) => b - a);
+    const map = new Map();
+    
+    for(let i = 0; i < size; ++i) {
+        map.set(sortedArr[i], size - i - 1);
+        
+    }
+    const result = [];
+    
+    for(let i = 0; i < size; ++i) {
+        result.push(map.get(nums[i]));
+    }
+    return result;
+};
