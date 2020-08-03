@@ -40,3 +40,25 @@ var spiralOrder = function(matrix) {
 
     return result;
 };
+
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var spiralOrder = function(matrix) {
+    const result = [];
+    
+    while(matrix.length) {
+        const first = matrix.shift();
+        result.push(...first);
+        for(const m of matrix) {
+            let val = m.pop();
+            if(val) {
+                result.push(val);
+                m.reverse();
+            }
+        }
+        matrix.reverse();
+    }
+    return result;
+};
