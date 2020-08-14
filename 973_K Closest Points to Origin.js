@@ -15,3 +15,16 @@ var kClosest = function(points, K) {
     }
     return result;
 };
+
+/**
+ * @param {number[][]} points
+ * @param {number} K
+ * @return {number[][]}
+ */
+function distance(a) {
+    return a[0] * a[0] + a[1] * a[1];
+}
+
+var kClosest = function(points, K) {
+    return points.sort((a, b) => distance(a) - distance(b)).slice(0, K);
+};
