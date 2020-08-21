@@ -11,9 +11,9 @@ var multiply = function(num1, num2) {
     let ans = new Array(size1 + size2).fill(0);
     let str = "";
     
-    for(let i = size1 - 1; i >= 0; --i) {
-        for(let j = size2 - 1; j >= 0; --j) {
-            let product = (num1[i].charCodeAt(0) - 48) * (num2[j].charCodeAt(0) - 48);
+    for(let i = size2 - 1; i >= 0; --i) {
+        for(let j = size1 - 1; j >= 0; --j) {
+            let product = (num2[i].charCodeAt(0) - 48) * (num1[j].charCodeAt(0) - 48);
             let p1 = i + j;
             let p2 = i + j + 1;
             let sum = product + ans[p2];
