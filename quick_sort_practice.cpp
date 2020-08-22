@@ -15,6 +15,7 @@ void swap(int& a, int& b) {
 
 int partition(int arr[], int low, int high) {
     int pivot = arr[high];
+    std::cout << "pivot : " << pivot << std::endl;
     int index = (low - 1);
 
     for (int i = low; i < high; ++i) {
@@ -23,12 +24,12 @@ int partition(int arr[], int low, int high) {
             std::cout << low << ", " << high << std::endl;
             std::cout << "index : " << index << ", arr[index] : " << arr[index] << ", i : " << i << ", arr[i] : " << arr[i] << std::endl;
             swap(arr[index], arr[i]);
-            printArray(arr, 5);
+            printArray(arr, 7);
         }
     }
     std::cout << "----Out of Loop1----" << std::endl;
     swap(arr[index + 1], arr[high]);
-    printArray(arr, 5);
+    printArray(arr, 7);
     std::cout << "----Out of Loop2----" << std::endl;
     std::cout << "return " << (index + 1) << std::endl;
     return (index + 1);
@@ -44,7 +45,7 @@ void quick_sort(int arr[], int low, int high) {
 }
 
 int main(void) {
-    int arr[] = { 4, 5, 2, 3, 1 };
+    int arr[] = { 1, 2, 5, 4, -1, -2, 3 };
     int n = sizeof(arr) / sizeof(arr[0]);
     std::cout << n << std::endl;
     printArray(arr, n);
