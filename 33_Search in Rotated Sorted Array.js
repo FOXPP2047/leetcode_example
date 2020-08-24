@@ -38,6 +38,7 @@ var search = function(nums, target) {
         
     let pivot = findPivot(0, size - 1);
     
+    //this means not rotated array
     if(pivot === -1) return binarySearch(0, size - 1);
     if(nums[pivot] === target)
         return pivot;
