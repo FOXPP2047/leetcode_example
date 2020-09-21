@@ -34,3 +34,23 @@ var numPairsDivisibleBy60 = function(time) {
     }
     return count;
 };
+
+/**
+ * @param {number[]} time
+ * @return {number}
+ */
+var numPairsDivisibleBy60 = function(time) {
+    let count = 0;
+    let map = new Map();
+    
+    for (let curr of time) {
+        let remain = curr % 60;
+        let find = remain === 0 ? 0 : 60 - remain;
+        
+        if(map.has(find)) count += map.get(find);
+        
+        if(map.has(remain)) map.set(remain, map.get(remain) + 1);
+        else map.set(remain, 1);
+    }
+    return count;
+};
