@@ -16,3 +16,24 @@ var merge = function(intervals) {
     }
     return result;
 };
+/**
+ * @param {number[][]} intervals
+ * @return {number[][]}
+ */
+var merge = function(intervals) {
+    const size = intervals.length;
+    intervals.sort((a, b) => a[0] - b[0]);
+    
+    let merged = [];
+    
+    for(let curr of intervals) {
+        if(!merged.length || merged[merged.length - 1][1] < curr[0]) {
+            merged.push(curr);
+        } else {
+            if(merged[merged.length - 1][1] < curr[1]) {
+                merged[merged.length - 1][1] = curr[1];
+            } 
+        }
+    }
+    return merged;
+};
