@@ -3,6 +3,7 @@
  * @param {number} target
  * @return {number[]}
  */
+ //This is citrix question
 var twoSum = function(nums, target) {
     let map = new Map();
     const size = nums.length;
