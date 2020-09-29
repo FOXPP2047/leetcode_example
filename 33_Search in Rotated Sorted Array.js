@@ -34,7 +34,7 @@ var search = function(nums, target) {
         if(nums[mid] > target) 
             return binarySearch(low, mid - 1);
         else return binarySearch(mid + 1, high);
-    }
+    } //find pivot first
         
     let pivot = findPivot(0, size - 1);
     
