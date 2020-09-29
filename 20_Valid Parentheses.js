@@ -20,3 +20,4 @@ var isValid = function(s) {
     }
     return stack.length > 0 ? false : true;
 };
+//Using map, solve the problem
