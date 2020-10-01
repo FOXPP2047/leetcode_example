@@ -41,6 +41,7 @@ var spiralOrder = function(matrix) {
     return result;
 };
 
+//read spiral matrix
 /**
  * @param {number[][]} matrix
  * @return {number[]}
