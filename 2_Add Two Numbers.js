@@ -36,4 +36,4 @@ var addTwoNumbers = function(l1, l2) {
         result = result.next;
     }
     return dummy.next;
-};
+};//dummy.next
