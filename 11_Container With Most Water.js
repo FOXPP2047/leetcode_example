@@ -15,3 +15,4 @@ var maxArea = function(height) {
     }
     return max;
 };
+//maxArea of water
