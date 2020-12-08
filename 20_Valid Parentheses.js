@@ -9,15 +9,16 @@ var isValid = function(s) {
     map.set("]", "[");
     
     const size = s.length;
-    const stack = [];
+    let stack = [];
     
     for(let i = 0; i < size; ++i) {
-        if(s[i] === "(" || s[i] === "{" || s[i] === "[") stack.push(s[i]);
-        else {
-            if(stack[stack.length - 1] === map.get(s[i])) stack.pop();
-            else return false;
-        }
+        let c = s.charAt(i);
+        
+        if(map.has(c)) {
+            let top = stack.length === 0 ? "#" : stack.pop();
+            if (top != map.get(c)) return false;
+        } else stack.push(c);
     }
-    return stack.length > 0 ? false : true;
+    
+    return stack.length === 0 ? true : false;
 };
-//Using map, solve the problem
