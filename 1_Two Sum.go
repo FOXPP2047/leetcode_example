@@ -1,3 +1,4 @@
+//Two Sum value finding index
 func twoSum(nums []int, target int) []int {
     mapping := map[int] int{}
     
