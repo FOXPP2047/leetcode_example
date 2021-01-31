@@ -48,3 +48,24 @@ let kmp = (needle) => {
     return lps;
 }
 
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    const size = haystack.length;
+    const needleSize = needle.length;
+    
+    if (haystack === "" && needle === "") {
+        return 0;
+    }
+    
+    for(let i = 0; i < size; ++i) {
+        if(haystack.substring(i, i + needleSize) === needle) {
+            return i;
+        }
+    }
+    return -1;
+};
